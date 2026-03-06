@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Baloo+2:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fef6e4, #e3f6f5);
+  font-family: 'Poppins', sans-serif;
+  color: #2b2b2b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CENTER WRAPPER */
+.hero-center {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* CARD */
+.container {
+  background: white;
+  padding: 40px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
+}
+
+/* SEARCH CARD HIDDEN INITIALLY */
+#searchCard {
+  display: none;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+/* TEXT */
+h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.5rem;
+  color: #0f766e;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #f97316;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #115e59;
+  transform: translateY(-2px);
+}
+
+/* LOGO */
+.hero-logo {
+  width: 180px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 15px 25px rgba(15,118,110,0.25));
+}
+
+.tap {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+
+/* existing styles unchanged */
+
+.flow {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.route-box {
+  background: #f0fdfa;
+  padding: 20px;
+  border-radius: 14px;
+  margin: 20px 0;
+}
+
+.stop {
+  padding: 6px;
+  border-radius: 8px;
+  margin: 4px 0;
+}
+
+.start {
+  background: #dcfce7;
+  font-weight: bold;
+}
+
+.end {
+  background: #fee2e2;
+  font-weight: bold;
+}
+
+.middle {
+  background: #f0fdfa;
+}
+
+.faded {
+  opacity: 0.4;
+}
