@@ -6,23 +6,28 @@
   <title>HopStop | Search</title>
   <link rel="stylesheet" href="/style1.css">
 </head>
+
 <body>
 
 <div class="container">
-  <h2>Find Your Bus Route</h2>
 
-  <input list="busNumbers" id="bus" placeholder="Enter Bus Number">
-  <datalist id="busNumbers"></datalist>
+<h2>Find Your Bus Route</h2>
 
-  <p>— OR —</p>
+<input list="busNumbers" id="bus" placeholder="Enter Bus Number" autocomplete="off">
+<datalist id="busNumbers"></datalist>
 
-  <input list="stops" id="start" placeholder="Start Location">
-  <input list="stops" id="destination" placeholder="Destination">
-  <datalist id="stops"></datalist>
+<p>— OR —</p>
 
-  <button id="nextBtn" disabled>Next</button>
+<input list="stops" id="start" placeholder="Start Location" autocomplete="off">
+<input list="stops" id="destination" placeholder="Destination" autocomplete="off">
+
+<datalist id="stops"></datalist>
+
+<button id="nextBtn" disabled>Next</button>
+
 </div>
 
-<script src="/search.js" defer></script>
+<script src="/search.js"></script>
+
 </body>
 </html>
