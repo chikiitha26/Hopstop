@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HopStop | Results</title>
+  <meta name="description" content="Bus route details – HopStop">
+  <title>HopStop | Route Details</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="container result-container">
+  <a href="/search.html" class="back-link" aria-label="Back to search">← Search Again</a>
+
   <h1>Route Details</h1>
-  <div id="output">Loading...</div>
-  <button id="searchAgainBtn">Search Again</button>
+
+  <div id="output" aria-live="polite" aria-label="Route results">
+    <div class="loading-state">
+      <span class="spinner" aria-hidden="true"></span> Loading route…
+    </div>
+  </div>
 </div>
 
 <script src="/result.js" defer></script>

@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HopStop</title>
+  <meta name="description" content="HopStop – QR-based bus route information for Hyderabad city buses">
+  <meta name="theme-color" content="#0f766e">
+  <title>HopStop – Bus Route Finder</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body class="home">
@@ -11,25 +13,23 @@
 <div class="hero-center">
 
   <!-- LOGO CARD -->
-  <div class="container card" id="logoCard" tabindex="0" aria-label="Continue to search">
-    <img src="/logo1.png" class="hero-logo" alt="HopStop Logo">
+  <div class="container card" id="logoCard" tabindex="0" role="button" aria-label="Continue to search">
+    <img src="/logo1.png" class="hero-logo" alt="HopStop – QR Bus Route Portal Logo">
     <h1>HopStop</h1>
     <p class="tagline">A QR-based bus route information portal</p>
     <p class="tap" id="tapText">Tap to continue</p>
   </div>
 
   <!-- SEARCH CARD -->
-  <div class="container card" id="searchCard" style="display:none;">
+  <div class="container card" id="searchCard" hidden>
     <h1>HopStop</h1>
     <h2>🚌 Find Your Bus Route</h2>
-    <p>Scan a QR code and instantly find your bus route.</p>
-    <button id="nextButton">Find My Route</button>
+    <p>Scan a QR code or search by stop to find your route instantly.</p>
+    <button id="nextButton" aria-label="Go to route search">Find My Route</button>
   </div>
 
 </div>
 
-<script src="/main.js" defer>
-</script>
-
+<script src="/main.js" defer></script>
 </body>
 </html>

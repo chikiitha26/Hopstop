@@ -3,31 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HopStop | Search</title>
+  <meta name="description" content="Search Hyderabad bus routes by bus number or stops">
+  <title>HopStop | Search Routes</title>
   <link rel="stylesheet" href="/style1.css">
 </head>
 
 <body>
-
 <div class="container">
 
-<h2>Find Your Bus Route</h2>
+  <a href="/" class="back-link" aria-label="Back to home">← Home</a>
 
-<input list="busNumbers" id="bus" placeholder="Enter Bus Number" autocomplete="off">
-<datalist id="busNumbers"></datalist>
+  <h2>Find Your Bus Route</h2>
 
-<p>— OR —</p>
+  <div class="search-mode" role="group" aria-label="Search by bus number or stops">
 
-<input list="stops" id="start" placeholder="Start Location" autocomplete="off">
-<input list="stops" id="destination" placeholder="Destination" autocomplete="off">
+    <div class="search-section">
+      <label for="bus" class="search-label">Search by bus number</label>
+      <div class="input-wrapper">
+        <input
+          list="busNumbers"
+          id="bus"
+          placeholder="e.g. 5, 1B, 187L"
+          autocomplete="off"
+          aria-label="Bus number"
+        >
+        <datalist id="busNumbers"></datalist>
+      </div>
+    </div>
 
-<datalist id="stops"></datalist>
+    <div class="divider" aria-hidden="true">— OR —</div>
 
-<button id="nextBtn" disabled>Next</button>
+    <div class="search-section">
+      <label class="search-label">Search by stops</label>
+      <div class="input-wrapper">
+        <input
+          list="stops"
+          id="start"
+          placeholder="Start location"
+          autocomplete="off"
+          aria-label="Start location"
+        >
+      </div>
+      <div class="input-wrapper" style="margin-top: 10px;">
+        <input
+          list="stops"
+          id="destination"
+          placeholder="Destination"
+          autocomplete="off"
+          aria-label="Destination"
+        >
+      </div>
+      <datalist id="stops"></datalist>
+    </div>
+
+  </div>
+
+  <p class="validation-msg" id="validationMsg" aria-live="polite"></p>
+
+  <button id="nextBtn" disabled aria-label="Search for routes">Search Routes</button>
+
 
 </div>
 
-<script src="/search.js"></script>
-
+<script src="/search.js" defer></script>
 </body>
 </html>

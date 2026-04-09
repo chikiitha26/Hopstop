@@ -1,102 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Baloo+2:wght@600&display=swap');
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   background: linear-gradient(135deg, #fef6e4, #e3f6f5);
   font-family: 'Poppins', sans-serif;
   color: #2b2b2b;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .container {
   background: white;
-  padding: 40px;
-  width: 90%;
-  max-width: 420px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 460px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-h1 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.5rem;
+/* ── BACK LINK ─────────────────────────────────── */
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
   color: #0f766e;
-  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ── TYPOGRAPHY ────────────────────────────────── */
 h2 {
   color: #f97316;
-  margin-bottom: 20px;
+  margin: 0 0 24px;
+  font-size: 1.4rem;
 }
 
-p {
-  font-size: 0.95rem;
-  margin-bottom: 25px;
+.search-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
 }
 
+.divider {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.search-section {
+  margin-bottom: 4px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+/* ── INPUTS ────────────────────────────────────── */
 input {
   width: 100%;
-  padding: 14px;
-  margin: 10px 0;
+  padding: 13px 16px;
   border-radius: 12px;
   border: 2px solid #d1fae5;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1e293b;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #fafffe;
 }
 
 input:focus {
   outline: none;
   border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15,118,110,0.12);
 }
 
+input:disabled {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+/* ── VALIDATION MESSAGE ────────────────────────── */
+.validation-msg {
+  font-size: 0.82rem;
+  color: #dc2626;
+  min-height: 20px;
+  margin: 8px 0 0;
+  text-align: center;
+}
+
+/* ── BUTTON ────────────────────────────────────── */
 button {
   width: 100%;
   padding: 14px;
-  margin-top: 15px;
+  margin-top: 20px;
   background: #0f766e;
   color: white;
   border: none;
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   background: #115e59;
   transform: translateY(-2px);
 }
 
-.secondary-btn {
-  background: #f97316;
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
 }
 
-.secondary-btn:hover {
-  background: #ea580c;
-}
-
-.route-box {
-  background: #f0fdfa;
-  padding: 20px;
-  border-radius: 14px;
-  margin: 20px 0;
-}
-
-
-/* existing styles unchanged */
-
-.flow {
-  font-size: 0.85rem;
+/* ── LOADING STATE ─────────────────────────────── */
+.loading-state {
+  text-align: center;
   color: #64748b;
-  margin-bottom: 15px;
+  padding: 14px 0 4px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #d1fae5;
+  border-top-color: #0f766e;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media (max-width: 480px) {
+  .container {
+    padding: 28px 24px;
+  }
+}
